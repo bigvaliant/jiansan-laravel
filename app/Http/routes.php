@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
         // 壁纸
         Route::resource('wallpaper', 'WallpaperController');
-        Route::post('upload', 'WallPaperController@upload')->name('admin.upload');
+        Route::post('upload', 'WallpaperController@upload')->name('admin.upload');
         
         // 分类
         Route::resource('category', 'CategoryController');
