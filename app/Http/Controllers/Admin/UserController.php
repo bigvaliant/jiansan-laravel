@@ -113,6 +113,10 @@ class UserController extends BaseController
      */
     public function modify(Request $request)
     {
+        if ($request->isMethod('get')) {
+            return view('admin.user.modify');
+        }
+        
         if ($input = $request->all()) {
             $rules = [
                 'password' => 'required|between:6,20|confirmed',
@@ -137,9 +141,7 @@ class UserController extends BaseController
             } else {
                 return back()->withErrors($validator);
             }
-        } else {
-            return view('admin.user.modify');
-        }
+        } 
     }
     
 }
