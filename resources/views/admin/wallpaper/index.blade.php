@@ -82,7 +82,7 @@
                             </div>
                             <div class="col-sm-7">
                                 <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                                    {{ $wallpapers->links() }}
+                                    {{ $wallpapers->appends(['category_id'=>$wallpaper->category_id])->links() }}
                                 </div>
                             </div>
                         </div>
